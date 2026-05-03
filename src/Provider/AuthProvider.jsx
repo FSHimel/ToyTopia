@@ -1,14 +1,25 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { createContext } from "react";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createContext, useState } from "react";
 import { auth } from "../firebase.init";
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
   const createUser = (email, password) => {
-    createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password);
   };
-  return <AuthContext>{children}</AuthContext>;
+  const updateUser = (updatedData) => {
+    return updateProfile(auth.currentUser, updatedData);
+  };
+
+  const authData = {
+    createUser,
+    setUser,
+    user,
+    updateUser,
+  };
+  return <AuthContext value={authData}>{children}</AuthContext>;
 };
 
 export default AuthProvider;
