@@ -18,14 +18,14 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        // updateUser({ displayName: name, photoURL: photoURL })
-        //   .then(() => {
-        //     setUser({ ...user, displayName: name, photoURL: photoURL });
-        //   })
-        //   .catch((error) => {
-        //     console.log(error);
-        //     setUser(user);
-        //   });
+        updateUser({ displayName: name, photoURL: photoURL })
+          .then(() => {
+            setUser({ ...user, displayName: name, photoURL: photoURL });
+          })
+          .catch((error) => {
+            console.log(error);
+            setUser(user);
+          });
       })
       .catch((error) => {
         console.log(error);
