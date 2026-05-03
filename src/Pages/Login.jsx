@@ -1,7 +1,22 @@
 import { Link } from "react-router";
 import NavBar from "../Components/NavBar";
+import { use } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
+  const { signInUser, user } = use(AuthContext);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    signInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <>
       <NavBar></NavBar>
@@ -10,15 +25,21 @@ const Login = () => {
           <div className="card bg-base-100/80 backdrop-blur-md shadow-2xl">
             <div className="card-body">
               <h1 className="text-5xl font-bold">Login now!</h1>
-              <form>
+              <form onSubmit={handleLogin}>
                 <fieldset className="fieldset w-80">
                   <label className="label">Email</label>
-                  <input type="email" className="input" placeholder="Email" />
+                  <input
+                    type="email"
+                    className="input"
+                    name="email"
+                    placeholder="Email"
+                  />
 
                   <label className="label">Password</label>
                   <input
                     type="password"
                     className="input"
+                    name="password"
                     placeholder="Password"
                   />
 
