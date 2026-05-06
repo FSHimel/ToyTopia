@@ -56,7 +56,7 @@ const Register = () => {
   return (
     <>
       <NavBar></NavBar>
-      <div className="hero bg-[url('https://i.ibb.co/fGSHxdJk/markus-spiske-6pfl-Ee-Sz-GUo-unsplash.jpg')] bg-cover bg-center min-h-screen">
+      <div className="hero bg-[url('https://i.postimg.cc/nrVSRBb3/markus-spiske-6pfl-Ee-Sz-GUo-unsplash.jpg')] bg-cover bg-center min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="card bg-base-100/80 backdrop-blur-md shadow-2xl">
             <div className="card-body">
