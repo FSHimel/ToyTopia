@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import ToyCard from "../Components/ToyCard";
 import useToyData from "../Hooks/useToyData";
 
@@ -15,10 +16,18 @@ const AllToys = () => {
 
         <div></div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6 items-stretch">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 space-x-2 md:gap-6 items-stretch">
         {toys.map((toy) => (
           <ToyCard key={toy.toyId} toy={toy}></ToyCard>
         ))}
+      </div>
+      <div>
+        <Link
+          to={"/"}
+          className="bg-[#99ddff] text-black btn btn-primary mt-10 font-bold flex items-center w-fit mx-auto"
+        >
+          Go Back
+        </Link>
       </div>
     </div>
   );

@@ -20,14 +20,14 @@ const Home = () => {
 
           <div></div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6 items-stretch">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 space-x-2 md:gap-6 items-stretch">
           {popularToys.map((toy) => (
             <ToyCard key={toy.toyId} toy={toy}></ToyCard>
           ))}
         </div>
         <Link
           to={"/all-toys"}
-          className="bg-[#99ddff] text-black btn btn-primary  font-bold flex items-center w-fit mx-auto"
+          className="bg-[#99ddff] text-black btn btn-primary mt-10 font-bold flex items-center w-fit mx-auto"
         >
           Show All
         </Link>
