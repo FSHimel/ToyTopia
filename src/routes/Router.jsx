@@ -4,7 +4,8 @@ import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Error from "../Pages/Error";
-import Loading from "../Pages/Loading";
+import PrivetRout from "./PrivetRout";
+import MyProfile from "../Pages/MyProfile";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,15 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
+      },
+      {
+        path: "my-profile",
+        element: (
+          <PrivetRout>
+            {" "}
+            <MyProfile></MyProfile>{" "}
+          </PrivetRout>
+        ),
       },
     ],
   },
