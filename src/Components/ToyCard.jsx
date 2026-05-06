@@ -4,12 +4,12 @@ import rating from "../assets/icon-ratings.png";
 const ToyCard = ({ toy }) => {
   const { toyId } = toy;
   return (
-    <div className="card bg-emerald-50 w-96 shadow-xl">
+    <div className="card bg-emerald-50 shadow-xl mb-5">
       <figure className="p-3">
         <img
           src={toy.pictureURL}
           alt="Shoes"
-          className="rounded-xl h-48 w-full"
+          className="rounded-xl w-full h-52 object-cover"
         />
       </figure>
       <div className="px-2 pb-4">

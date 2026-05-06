@@ -7,6 +7,7 @@ import Error from "../Pages/Error";
 import PrivetRout from "./PrivetRout";
 import MyProfile from "../Pages/MyProfile";
 import ToyDetails from "../Pages/ToyDetails";
+import AllToys from "../Pages/AllToys";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
+      },
+      {
+        path: "all-toys",
+        Component: AllToys,
       },
       {
         path: "my-profile",
