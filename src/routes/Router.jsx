@@ -6,6 +6,7 @@ import Register from "../Pages/Register";
 import Error from "../Pages/Error";
 import PrivetRout from "./PrivetRout";
 import MyProfile from "../Pages/MyProfile";
+import ToyDetails from "../Pages/ToyDetails";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,14 @@ const router = createBrowserRouter([
   {
     path: "register",
     Component: Register,
+  },
+  {
+    path: `toy-details/:id`,
+    element: (
+      <PrivetRout>
+        <ToyDetails></ToyDetails>
+      </PrivetRout>
+    ),
   },
 ]);
 
