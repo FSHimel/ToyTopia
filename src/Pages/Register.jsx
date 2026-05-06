@@ -1,9 +1,12 @@
 import { Link, useNavigate } from "react-router";
 import NavBar from "../Components/NavBar";
-import { use } from "react";
+import { use, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
+  const [show, setShow] = useState(false);
+  const [error, setError] = useState("");
   const { createUser, setUser, updateUser } = use(AuthContext);
   const navigate = useNavigate();
 
@@ -15,6 +18,15 @@ const Register = () => {
     const photoURL = e.target.photo.value;
     const password = e.target.password.value;
     // console.log(name, email, photoURL, password);
+
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if (!passwordPattern.test(password)) {
+      setError(
+        "Password must be at least 6 characters and include both uppercase and lowercase letters",
+      );
+      return;
+    }
+
     createUser(email, password)
       .then((result) => {
         const user = result.user;
@@ -24,13 +36,13 @@ const Register = () => {
             setUser({ ...user, displayName: name, photoURL: photoURL });
             navigate("/");
           })
-          .catch((error) => {
-            console.log(error);
+          .catch((err) => {
+            console.log(err);
             setUser(user);
           });
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        console.log(err);
       });
   };
   return (
@@ -69,12 +81,20 @@ const Register = () => {
                   />
                   {/* password  */}
                   <label className="label">Password</label>
-                  <input
-                    type="password"
-                    className="input"
-                    name="password"
-                    placeholder="Password"
-                  />
+                  <div className="relative">
+                    <input
+                      type={show ? "text" : "password"}
+                      className="input"
+                      name="password"
+                      placeholder="Password"
+                    />
+                    <span
+                      onClick={() => setShow(!show)}
+                      className="absolute top-4 right-4 cursor-pointer z-50"
+                    >
+                      {show ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                    </span>
+                  </div>
                   <div>
                     <a className="link link-hover">Forgot password?</a>
                   </div>
@@ -88,6 +108,7 @@ const Register = () => {
                       Login
                     </Link>{" "}
                   </p>
+                  <p className="text-red-600">{error}</p>
                 </fieldset>
               </form>
             </div>
