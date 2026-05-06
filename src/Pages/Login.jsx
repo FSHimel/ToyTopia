@@ -9,15 +9,12 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
-  console.log(user);
-  console.log(location);
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     signInUser(email, password)
       .then((result) => {
-        console.log(result.user);
         e.target.reset();
         navigate(location.state || "/");
       })

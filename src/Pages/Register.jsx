@@ -13,12 +13,10 @@ const Register = () => {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    // console.log(e.target.name.value);
     const name = e.target.name.value;
     const email = e.target.email.value;
     const photoURL = e.target.photo.value;
     const password = e.target.password.value;
-    // console.log(name, email, photoURL, password);
 
     const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     if (!passwordPattern.test(password)) {
@@ -31,7 +29,6 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
         updateUser({ displayName: name, photoURL: photoURL })
           .then(() => {
             setUser({ ...user, displayName: name, photoURL: photoURL });
