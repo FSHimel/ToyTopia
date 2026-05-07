@@ -5,7 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
-  const { signInUser, user, signInWithGoogle } = use(AuthContext);
+  const { signInUser, signInWithGoogle } = use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
@@ -14,7 +14,7 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     signInUser(email, password)
-      .then((result) => {
+      .then(() => {
         e.target.reset();
         navigate(location.state || "/");
       })
