@@ -1,7 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import car from "../assets/car.jpg";
-import doll from "../assets/dool.jpg";
 
 // ✅ Import CSS
 import "swiper/css";
@@ -19,14 +17,22 @@ const NewArrivalSllider = () => {
       loop={true}
     >
       <SwiperSlide>
-        <img src={car} alt="Slide 1" className="w-full h-96 object-cover" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src={doll} alt="Slide 2" className="w-full h-96 object-cover" />
+        <img
+          src="https://i.postimg.cc/DyrMy4S5/luis-arias-ZDy-Wum-OJo-SY-unsplash.jpg"
+          alt="Slide 1"
+          className="w-full h-96 object-cover"
+        />
       </SwiperSlide>
       <SwiperSlide>
         <img
-          src="https://i.postimg.cc/HW3Z71pN/lucas-george-wendt-yx-Zj-Tv30tl8-unsplash.jpg"
+          src="https://i.postimg.cc/PqgWwKcm/steward-masweneng-JSLuw23jed-Y-unsplash.jpg"
+          alt="Slide 2"
+          className="w-full h-96 object-cover"
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img
+          src="https://i.postimg.cc/QCXWQzqW/john-carlo-tubelleza-jagi-ILTQ8p-A-unsplash.jpg"
           alt="Slide 3"
           className="w-full h-96 object-cover"
         />
