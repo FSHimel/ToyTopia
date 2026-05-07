@@ -1,16 +1,24 @@
-# React + Vite
+Project Name: ToyTopia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+It's a toy store based web app. Here we provide all the popular and trendy toys that children love to have. Our purpose is to ensure the quality of the products we serve.
 
-Currently, two official plugins are available:
+live url: https://toytopia-b3c49.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Key Features:
 
-## React Compiler
+1. It has a popular toys section in the home page.
+2. In the cards where all the toys are showed, there is a button "View More". If anyone who doesn't have an account or hasn't logged in yet he/she would not be able to see that section. It will redirect him/her to login page.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+NPM packages I used:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. vite
+2. axios
+3. react-toastify
+4. firebase
+5. tailwindcss
+6. daisyui
+7. swiper
+8. react-icons
+9. react
+10. react-dom
+11. react-router
